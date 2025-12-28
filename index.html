@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полина Мочалова - Профессиональный визажист | Липецк</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e6a4b4; /* Нежный розовый */
+            --secondary: #c3aed6; /* Светло-сиреневый */
+            --accent: #8675a9; /* Глубокий сиреневый */
+            --dark: #333333;
+            --light: #fdf8fa;
+            --gray: #888888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fdf8fa 0%, #f5e6ee 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .business-card {
+            background-color: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Шапка с основной информацией */
+        .card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 40px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-decoration {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .header-decoration-2 {
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .photo-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.4);
+            margin: 0 auto 20px;
+            z-index: 2;
+            position: relative;
+            background-color: #f0d8df;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .photo-container:hover .profile-photo {
+            transform: scale(1.05);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.9);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .card-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 8px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .card-header .profession {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 15px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .divider {
+            height: 3px;
+            width: 80px;
+            background: rgba(255, 255, 255, 0.7);
+            margin: 0 auto 20px;
+            border-radius: 3px;
+        }
+
+        /* Основной контент */
+        .card-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 50px 40px;
+        }
+
+        .info-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .info-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .info-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .contact-icon {
+            width: 46px;
+            height: 46px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            margin-right: 18px;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .contact-text a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+
+        .contact-text .address {
+            font-style: normal;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .contact-note {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Секция портфолио */
+        .portfolio-section {
+            width: 100%;
+            padding: 20px 40px 50px;
+        }
+
+        .portfolio-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            background-color: white;
+            height: 280px;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f8f0f3, #e8e0f0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .portfolio-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Секция соцсетей */
+        .social-section {
+            background-color: var(--light);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .social-section h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 25px;
+            color: var(--dark);
+            font-size: 1.6rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-btn.whatsapp { color: #25D366; }
+        .social-btn.vk { color: #4C75A3; }
+        .social-btn.instagram { 
+            background: linear-gradient(45deg, #833AB4, #E1306C, #F77737);
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Подвал */
+        .card-footer {
+            padding: 25px;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .card-header h1 {
+                font-size: 2.4rem;
+            }
+            
+            .card-content {
+                padding: 40px 30px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card-header {
+                padding: 30px 20px;
+            }
+            
+            .photo-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .card-header h1 {
+                font-size: 2rem;
+            }
+            
+            .card-content {
+                padding: 30px 20px;
+                flex-direction: column;
+            }
+            
+            .info-section {
+                min-width: 100%;
+            }
+            
+            .portfolio-section {
+                padding: 20px 20px 40px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 20px;
+            }
+            
+            .portfolio-item {
+                height: 240px;
+            }
+            
+            .social-section {
+                padding: 30px 20px;
+            }
+            
+            .social-btn {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .btn {
+                padding: 14px 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .card-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .photo-container {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="business-card">
+            <!-- Шапка с фото и именем -->
+            <div class="card-header">
+                <div class="header-decoration"></div>
+                <div class="header-decoration-2"></div>
+                
+                <div class="photo-container">
+                    <!-- ВСТАВЬТЕ ССЫЛКУ НА ФОТО ПОЛИНЫ ЗДЕСЬ -->
+                    <img src="images/5372990382515358756.jpg" 
+                         alt="Полина Мочалова - профессиональный визажист" 
+                         class="profile-photo"
+                         onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex';">
+                    
+                    <div class="photo-placeholder" id="placeholder" style="display: none;">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                </div>
+                
+                <h1>Полина Мочалова</h1>
+                <div class="profession">Профессиональный визажист-стилист</div>
+                <div class="divider"></div>
+            </div>
+            
+            <!-- Основная информация и контакты -->
+            <div class="card-content">
+                <div class="info-section">
+                    <h2>Контакты</h2>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                Телефон для записи
+                                <a href="tel:+79046991096">+7 (904) 699-10-96</a>
+                                <span class="contact-note">Telegram, WhatsApp</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                Адрес студии
+                                <div class="address">
+                                    г. Липецк, ул. Мусоргского, 3
+                                </div>
+                                <span class="contact-note">Выезд на дом и в офис доступен</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="far fa-clock"></i>
+                            </div>
+                                <span class="contact-note">По предварительной записи</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="info-section">
+                    <h2>Услуги</h2>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Свадебный макияж</strong><br>
+                                Создание идеального образа для самого важного дня
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Вечерний макияж</strong><br>
+                                Для мероприятий, фотосессий и особых случаев
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Выпускной макияж</strong><br>
+                                Подчеркнет вашу молодость и индивидуальность
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Консультация и обучение</strong><br>
+                                Индивидуальные уроки: "Макияж для себя", "Визаж с 0" 
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Секция портфолио -->
+            <div class="portfolio-section">
+                <h2>Портфолио</h2>
+                <div class="portfolio-grid">
+                   
+                    <div class="portfolio-item">
+                        <!-- ВСТАВЬТЕ ССЫЛКУ НА ФОТО РАБОТЫ 1 -->
+                        <img src="images/IMG_2771.JPG" 
+                             alt="Свадебный макияж" class="portfolio-img">
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <!-- ВСТАВЬТЕ ССЫЛКУ НА ФОТО РАБОТЫ 2 -->
+                        <img src="images/IMG_1166.JPG" 
+                             alt="Вечерний макияж" class="portfolio-img">
+                    </div>
+                    
+                   
+                    <div class="portfolio-item">
+                        <!-- ВСТАВЬТЕ ССЫЛКУ НА ФОТО РАБОТЫ 3 -->
+                        <img src="images/IMG_7542.JPG" 
+                             alt="Дневной макияж" class="portfolio-img">
+                    </div>
+                        </div>
+                    </div>
+                
+        
+            
+            <!-- Социальные сети и кнопки действия -->
+            <div class="social-section">
+                <h3>Свяжитесь со мной в социальных сетях</h3>
+                <div class="social-links">
+                    <a href="https://wa.me/79046991096" class="social-btn whatsapp" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://vk.ru/mochalova_polina" class="social-btn vk" target="_blank" title="ВКонтакте">
+                        <i class="fab fa-vk"></i>
+                    </a>
+                    <a href="https://www.instagram.com/mochalova_polina?igsh=NXltOWM1aTczM3B2" class="social-btn instagram" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="https://wa.me/79046991096" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Записаться через WhatsApp
+                    </a>
+                    <a href="tel:+79046991096" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Позвонить для консультации
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Подвал -->
+            <div class="card-footer">
+                © Полина Мочалова. Профессиональные услуги визажиста в Липецке.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Интерактивность для портфолио
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+        
+        // Проверка загрузки фото профиля
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePhoto = document.querySelector('.profile-photo');
+            const placeholder = document.getElementById('placeholder');
+            
+            if (profilePhoto.complete) {
+                if (profilePhoto.naturalHeight === 0) {
+                    placeholder.style.display = 'flex';
+                }
+            } else {
+                profilePhoto.addEventListener('error', function() {
+                    placeholder.style.display = 'flex';
+                });
+            }
+        });
+        
+        // Анимация при нажатии на кнопки
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
